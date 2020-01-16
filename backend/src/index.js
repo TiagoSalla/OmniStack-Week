@@ -9,10 +9,14 @@ const routes = require('./routes');
 const app = express();
 
 // Faz a conexão com a base mongo, o parâmetro é a string de conexão gerada pelo MongoDB
-mongoose.connect('mongodb+srv://tiago:<password>@cluster0-dbn8m.mongodb.net/test?retryWrites=true&w=majority', {
+// 'mongodb://localhost:27017/omnistack' --> MongoDB local
+mongoose.connect(
+  'mongodb+srv://tiago:CLfV4uXP5bV1rD0e@cluster0-dbn8m.mongodb.net/omnistack?retryWrites=true&w=majority',
+  {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+    useUnifiedTopology: true
+  }
+);
 
 // Configura o express para entender json
 app.use(express.json());
